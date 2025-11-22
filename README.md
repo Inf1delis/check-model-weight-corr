@@ -1,5 +1,11 @@
 # check-model-weight-corr
 
+> Проверил на
+> [mistralai/Mistral-Nemo-Instruct-2407/](https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/)
+> и
+> [Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24](https://huggingface.co/Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24),
+>там корреляции в районе единицы, что говорит о прямом наследовании модели (об этом авторы `Vikhr-Nemo-12B` пишут прямо в карточке на HuggingFace). Корреляции в файле [check_corr_nemo_12b.csv](./check_corr_nemo_12b.csv)
+
 Небольшой инструмент для **покомпонентного сравнения весов двух LLM‑чекпоинтов**. Считает набор метрик похожести для каждого тензора (по ключам), с агрегацией по слоям и отдельным анализом LayerNorm/bias.
 
 Основной сценарий: быстро проверить, *насколько и где именно* два чекпоинта похожи/разошлись, не сваливая всё в одно усреднение по модели.
